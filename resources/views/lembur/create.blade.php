@@ -58,7 +58,6 @@
         posisiInput.value = posisi;
     });
 
-    // trigger saat pertama kali
     select.dispatchEvent(new Event('change'));
 </script>
 @endsection

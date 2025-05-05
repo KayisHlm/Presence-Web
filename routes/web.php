@@ -6,6 +6,7 @@ use App\Http\Controllers\LemburController;
 use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\GajiController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CutiController;
 
 
 // Auth routes
@@ -17,11 +18,7 @@ Route::post('/login/submit', [AuthController::class,'submitLogin'])->name('login
 Route::post('/logout', [AuthController::class,'logout'])->name('logout');
 
 // Dashboard
-Route::get('/dashboard', function () {
-    return view('dashboard.home', [
-        'totalUser' => \App\Models\User::count(),
-    ]);
-})->name('dashboard.home');
+Route::get('/dashboard', function () {return view('dashboard.home', ['totalUser' => \App\Models\User::count(),]);})->name('dashboard.home');
 
 // User routes
 Route::get('/user', [UserController::class,'index'])->name('user.index');
@@ -45,7 +42,7 @@ Route::patch('/lembur/{user_id}/{tanggal}/reject', [LemburController::class, 're
 // Absen
 Route::get('/absen', [AbsenController::class,'index'])->name('absen.index');
 Route::get('/absen/create', [AbsenController::class,'create'])->name('absen.create');
-Route::post('/absen/store', [AbsenController::class, 'store'])->name('absen.store'); // Tidak perlu
+Route::post('/absen/store', [AbsenController::class, 'store'])->name('absen.store'); 
 Route::post('/absen/checkin', [AbsenController::class, 'checkIn'])->name('absen.checkin');
 Route::put('/absen/{id}/checkout', [AbsenController::class, 'checkOut'])->name('absen.checkout');
 Route::get('/absen/{id}/edit', [AbsenController::class,'edit'])->name('absen.edit');
@@ -60,3 +57,10 @@ Route::delete('/gaji/{user_id}', [GajiController::class, 'destroy'])->name('gaji
 Route::get('/gaji/{user_id}/edit', [GajiController::class, 'edit'])->name('gaji.edit');
 Route::get('/gaji/{user_id}/download', [GajiController::class, 'download'])->name('gaji.download');
 Route::patch('/gaji/{user_id}/update', [GajiController::class, 'update'])->name('gaji.update');
+
+// Cuti
+Route::get('/cuti', [CutiController::class, 'index'])->name('cuti.index'); 
+Route::get('/cuti/create', [CutiController::class, 'create'])->name('cuti.create');  
+Route::post('/cuti/store', [CutiController::class, 'store'])->name('cuti.store');  
+Route::patch('/cuti/{user_id}/{jenis_cuti}/{tanggal}/approve', [CutiController::class, 'approve'])->name('cuti.approve');
+Route::patch('/cuti/{user_id}/{jenis_cuti}/{tanggal}/reject', [CutiController::class, 'reject'])->name('cuti.reject');

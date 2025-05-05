@@ -12,7 +12,6 @@
       <div id="alertMessPosisi" class="alert alert-success d-none" role="alert">
         Data berhasil dimasukkan!
       </div>
-      <!-- Form Input Data -->
       <div class="card mb-4">
         <div class="card-body">
           <h5 class="card-title">Update Data</h5>
@@ -91,7 +90,6 @@
       <script>
         const gajiInput = document.getElementById('gaji');
       
-        // Format saat input diketik
         gajiInput.addEventListener('input', function (e) {
           let angka = this.value.replace(/[^,\d]/g, '').toString();
           let split = angka.split(',');
@@ -108,7 +106,6 @@
           this.value = rupiah ? 'Rp ' + rupiah : '';
         });
       
-        // Hapus simbol Rp dan titik sebelum submit
         document.querySelector('form').addEventListener('submit', function () {
           gajiInput.value = gajiInput.value.replace(/[^0-9]/g, '');
         });

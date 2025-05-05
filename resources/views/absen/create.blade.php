@@ -40,7 +40,6 @@
             </select>
         </div>
         
-        <!-- Lokasi otomatis diisi dengan geolocation -->
         <input type="hidden" name="lokasi_latitude" id="lokasi_latitude">
         <input type="hidden" name="lokasi_longitude" id="lokasi_longitude">
         

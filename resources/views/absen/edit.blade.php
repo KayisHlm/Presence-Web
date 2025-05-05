@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Letakkan ini di dalam layouts.app atau section head -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
@@ -65,13 +64,11 @@
 </div>
 
 <script>
-    // Ambil data dari variabel Blade (pastikan $absen tersedia)
     var latIn = {{ $absen->lokasi_latitude_in ?? 0 }};
     var lonIn = {{ $absen->lokasi_longitude_in ?? 0 }};
     var latOut = {{ $absen->lokasi_latitude_out ?? 0 }};
     var lonOut = {{ $absen->lokasi_longitude_out ?? 0 }};
 
-    // Peta Check In
     var mapCheckIn = L.map('map-checkin').setView([latIn, lonIn], 15);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19
@@ -79,7 +76,6 @@
     L.marker([latIn, lonIn]).addTo(mapCheckIn)
         .bindPopup("Check-In Location").openPopup();
 
-    // Peta Check Out
     var mapCheckOut = L.map('map-checkout').setView([latOut, lonOut], 15);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19

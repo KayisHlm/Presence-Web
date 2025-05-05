@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Aplikasi</title>
+    <title>Dashboard</title>
 
-    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -54,32 +53,28 @@
 </head>
 <body>
 
-    <!-- Sidebar -->
     <nav class="sidebar">
         <h4 class="text-white mb-4">✨ MyApp</h4>
         <a href="{{ route('dashboard.home') }}" class="{{ request()->is('dashboard') ? 'active' : '' }}">🏠 Dashboard</a>
         <a href="{{ route('user.index') }}">👥 Data User</a>
-        <a href="{{ route('lembur.index') }}" class="{{ request()->is('lembur*') ? 'active' : '' }}">💼 Data Lembur</a>
-        <a href="{{ route('absen.index') }}" class="{{ request()->is('absen*') ? 'active' : '' }}">📅 Data Absen</a>
-        <a href="{{ route('gaji.index') }}" class="{{ request()->is('gaji*') ? 'active' : '' }}">💰 Data Gaji</a>
+        <a href="{{ route('lembur.index') }}" class="{{ request()->is('lembur*') ? 'active' : '' }}">💼 Overtime Data</a>
+        <a href="{{ route('absen.index') }}" class="{{ request()->is('absen*') ? 'active' : '' }}">📅 Attendance Data</a>
+        <a href="{{ route('gaji.index') }}" class="{{ request()->is('gaji*') ? 'active' : '' }}">💰 Salary Data</a>
+        <a href="{{ route('cuti.index') }}" class="{{ request()->is('cuti*') ? 'active' : '' }}">🏖️ Leave Data</a>
 
-        <!-- Logout Button -->
         <form method="POST" action="{{ route('logout') }}" class="mt-4">
             @csrf
             <button type="submit" class="btn btn-danger w-100">Logout</button>
         </form>
     </nav>
 
-    <!-- Main Content -->
     <div class="main-content">
-        <!-- Top Navbar -->
         <nav class="navbar navbar-expand navbar-light bg-white mb-4">
             <div class="container-fluid">
                 <span class="navbar-brand mb-0 h1">Dashboard</span>
             </div>
         </nav>
 
-        <!-- Dynamic Content -->
         @yield('content')
     </div>
 

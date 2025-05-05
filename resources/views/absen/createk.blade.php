@@ -4,7 +4,6 @@
 <div class="container">
     <h3 class="text-center mb-4">Attendance Form</h3>
 
-    <!-- Tombol Check In / Check Out -->
     <div class="mb-4">
         <button class="btn btn-primary" onclick="setMode('checkin')">Check In</button>
         <button class="btn btn-warning" onclick="setMode('checkout')">Check Out</button>
@@ -65,7 +64,6 @@
     function setMode(mode) {
         document.getElementById('mode').value = mode;
 
-        // Update tampilan field
         const isCheckIn = mode === 'checkin';
         document.getElementById('checkin-time-group').style.display = isCheckIn ? 'block' : 'none';
         document.getElementById('checkout-time-group').style.display = isCheckIn ? 'none' : 'block';
@@ -74,7 +72,6 @@
         document.getElementById('latitude-out').style.display = isCheckIn ? 'none' : 'block';
         document.getElementById('longitude-out').style.display = isCheckIn ? 'none' : 'block';
 
-        // Set method dan action
         const form = document.getElementById('absenForm');
         const userId = "{{ $user->id }}";
         const today = new Date().toISOString().split('T')[0];

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Data Pasien</title>
+    <title>User Data</title>
   </head>
   <body class="bg-light">
     <div class="container py-5">
@@ -13,7 +13,6 @@
         Data submission successful!
       </div>
 
-      <!-- Form Input Data -->
       <div class="card mb-4">
         <div class="card-body">
           <h5 class="card-title">Add Data</h5>
@@ -63,10 +62,8 @@
         </div>
       </div>
     </div>
-  <!-- Script Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Script Format Rupiah -->
   <script>
     const gajiInput = document.getElementById('gaji');
   
