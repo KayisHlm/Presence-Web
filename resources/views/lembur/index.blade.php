@@ -28,10 +28,10 @@
         </thead>
         <tbody>
             @foreach($lemburs as $lembur)
-            @php
+                @php
                     $gajiPerJam = $lembur->user->gaji / 165;
                     $totalGajiLembur = $gajiPerJam * $lembur->jam_lembur;
-                    @endphp
+                @endphp
                 <tr>
                     <td>{{ $lembur->user->nama }}</td>
                     <td>{{ $lembur->user->posisi }}</td>

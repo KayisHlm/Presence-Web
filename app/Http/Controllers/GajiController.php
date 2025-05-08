@@ -57,8 +57,7 @@ class GajiController extends Controller
             'deduction' => $request->deduction,  // Use raw deduction value
             'tanggal' => $request->tanggal,
         ]);
-    
-        return redirect()->route('gaji.index')->with('success', 'Salary data successfully added.');
+        return redirect()->route('gaji.index');
     }
     
 
@@ -77,15 +76,16 @@ class GajiController extends Controller
         ]);
     
         $gaji->update($request->only('bonus', 'deduction', 'tanggal'));
-    
+
         return redirect()->route('gaji.index')->with('success', 'Salary data successfully updated.');
     }
 
     public function destroy($user_id)
+    
     {
         $gaji = Gaji::where('user_id', $user_id)->firstOrFail();
         $gaji->delete();
-    
+
         return redirect()->route('gaji.index')->with('success', 'Salary data successfully deleted.');
     }
     

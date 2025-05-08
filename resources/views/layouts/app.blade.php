@@ -56,7 +56,7 @@
     <nav class="sidebar">
         <h4 class="text-white mb-4">✨ MyApp</h4>
         <a href="{{ route('dashboard.home') }}" class="{{ request()->is('dashboard') ? 'active' : '' }}">🏠 Dashboard</a>
-        <a href="{{ route('user.index') }}">👥 Data User</a>
+        <a href="{{ route('user.index') }}">👥 User Data</a>
         <a href="{{ route('lembur.index') }}" class="{{ request()->is('lembur*') ? 'active' : '' }}">💼 Overtime Data</a>
         <a href="{{ route('absen.index') }}" class="{{ request()->is('absen*') ? 'active' : '' }}">📅 Attendance Data</a>
         <a href="{{ route('gaji.index') }}" class="{{ request()->is('gaji*') ? 'active' : '' }}">💰 Salary Data</a>

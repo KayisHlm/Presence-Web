@@ -32,7 +32,6 @@ class AuthController extends Controller
         }
     }
     
-
     function showLogin(){
         return view('login.show');
     }

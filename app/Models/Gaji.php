@@ -10,9 +10,7 @@ class Gaji extends Model
     use HasFactory;
 
     protected $table = 'gajis';
-
     protected $keyType = 'string';
-
     public $incrementing = false;
     public $primaryKey = 'user_id';
     protected $fillable = ['user_id', 'bonus', 'deduction', 'tanggal'];

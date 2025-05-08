@@ -40,7 +40,7 @@ class UserController extends Controller
         $validatedData['password'] = Hash::make($validatedData['password']);
         // Simpan data
         User::create($validatedData);
-    
+
         // Redirect ke halaman index setelah berhasil
         return redirect()->route('user.index');
     }
@@ -49,7 +49,7 @@ class UserController extends Controller
         $user = User::find($id); // Ganti 'patient' dengan 'user'
         return view('user.edit', compact('user')); // Pastikan variabelnya sama
     }
-    
+
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
