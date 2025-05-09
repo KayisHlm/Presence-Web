@@ -45,10 +45,6 @@
                         @endif
                     </div>
                 </div>
-
-                <div class="text-center mt-3">
-                    <small>Don't have account? <a href="{{ route('registration.show') }}">Sign up here</a>.</small>
-                </div>
             </div>
         </div>
     </div>

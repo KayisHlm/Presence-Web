@@ -10,9 +10,7 @@ use App\Http\Controllers\CutiController;
 
 
 // Auth routes
-Route::get('/', [AuthController::class,'showRegistration'])->name('registration.show');
-Route::get('/registration', [AuthController::class,'showRegistration'])->name('registration.show');
-Route::post('/registration/submit', [AuthController::class,'submitRegistration'])->name('registration.submit');
+Route::get('/', [AuthController::class,'showLogin'])->name('login.show');
 Route::get('/login', [AuthController::class,'showLogin'])->name('login.show');
 Route::post('/login/submit', [AuthController::class,'submitLogin'])->name('login.submit');
 Route::post('/logout', [AuthController::class,'logout'])->name('logout');

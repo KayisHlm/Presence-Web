@@ -42,7 +42,7 @@ class LemburController extends Controller
     
         return redirect()->route('lembur.index')->with('success', 'Overtime successfully approved');
     }
-    
+
     // Reject Lembur
     public function reject($user_id, $tanggal)
     {
@@ -73,13 +73,13 @@ class LemburController extends Controller
 
         return redirect()->route('lembur.index')->with('success', 'Overtime successfully deleted');
     }
-    
+
     public function create()
     {
         $users = Auth::user()->role === 'Admin' ? User::all() : collect(); // lebih aman
         return view('lembur.create', compact('users'));
     }
-    
+
     public function store(Request $request)
     {
         $request->validate([

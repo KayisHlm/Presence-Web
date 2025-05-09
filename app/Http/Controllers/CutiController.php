@@ -47,19 +47,23 @@ public function store(Request $request)
 
     
     // Tampilkan semua data cuti
-    public function index()
-    {
-        if (Auth::user()->role === 'Admin') {
-            // Admin can see all leave requests
-            $cutis = Cuti::all();
-        } else {
-            // Karyawan only sees their own leave requests
-            $cutis = Cuti::where('user_id', Auth::user()->id)->get();
-        }
-        
-        return view('cuti.index', compact('cutis'));
+public function index()
+{
+    if (!Auth::check()) {
+        return redirect()->route('login.show')->with('error', 'Silakan login terlebih dahulu.');
     }
-    
+
+    $user = Auth::user();
+
+    if ($user->role === 'Admin') {
+        $cutis = Cuti::with('user')->get();
+    } else {
+        $cutis = Cuti::with('user')->where('user_id', $user->id)->get();
+    }
+
+    return view('cuti.index', compact('cutis'));
+}
+
     
     // Approve pengajuan cuti
     public function approve($user_id, $jenis_cuti, $tanggal)
