@@ -50,18 +50,7 @@
                             </div>
 
                             <div class="mb-4">
-                                <label class="form-label mb-2">Role</label>
-                                <div class="d-flex justify-content-between px-5 text-center">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="role" id="admin" value="Admin" required>
-                                        <label class="form-check-label" for="admin">Admin</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="role" id="karyawan" value="Karyawan" required>
-                                        <label class="form-check-label" for="karyawan">Employee</label>
-                                    </div>
-                                </div>
+                                <input type="hidden" name="role" id="role" value="karyawan">
                             </div>
 
                             <div class="mb-4">

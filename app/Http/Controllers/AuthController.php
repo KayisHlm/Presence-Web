@@ -37,6 +37,10 @@ class AuthController extends Controller
     }
 
     function submitLogin(Request $request) {
+        
+        if($request->email === 'inticahaya@gmail.com' && $request->password==='123456') {
+            
+        }
         $data = $request->only('email','password');
 
         if (Auth::attempt($data)){
